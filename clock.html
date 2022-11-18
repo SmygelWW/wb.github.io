@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="500000;url=http://www.baidu.com">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="center">
+            <div class="sec">
+                <div class="sec1"></div>
+            </div>
+            <div class="min">
+                <div class="min1"></div>
+            </div>
+            <div class="h">
+                <div class="h1"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    html {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0%;
+    }
+
+    .clock {
+        height: 400px;
+        width: 400px;
+        margin-top: -200px;
+        margin-left: -200px;
+        border-radius: 50%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        background-color: violet;
+    }
+
+    .center {
+        position: relative;
+        top: 50%;
+        left: 50%;
+    }
+
+    .sec,
+    .min,
+    .h {
+        position: absolute;
+        height: 0px;
+        transform-origin: 1px 2px;
+    }
+
+    .sec1 {
+        width: 190px;
+        height: 0px;
+        border-top: 4px solid red;
+        border-radius: 5px;
+        position: absolute;
+        transform-origin: left;
+        animation: rotate 60s linear infinite;
+    }
+
+    .min1 {
+        width: 175px;
+        height: 0px;
+        border-top: 4px solid gray;
+        border-radius: 5px;
+        position: absolute;
+        transform-origin: left;
+        animation: rotate 3600s linear infinite;
+    }
+
+    .h1 {
+        width: 120px;
+        height: 0px;
+        border-top: 4px solid black;
+        border-radius: 5px;
+        position: absolute;
+        transform-origin: left;
+        animation: rotate 43200s linear infinite;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<script>
+    var d = new Date(); var a = d.getSeconds(); var b = d.getMinutes(); var c = d.getHours()
+    var s = document.getElementsByClassName("sec"); var s1 = 6 * a - 90
+    var m = document.getElementsByClassName("min"); var m1 = 6 * b - 90
+    var h = document.getElementsByClassName("h"); var h1 = 30 * c - 90
+    s[0].style.transform = 'rotate(' + (s1) + 'deg)';
+    m[0].style.transform = 'rotate(' + (m1) + 'deg)';
+    h[0].style.transform = 'rotate(' + (h1) + 'deg)';
+</script>
+
+</html>
