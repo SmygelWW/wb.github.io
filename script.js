@@ -10,7 +10,7 @@ var originY;
 
 //初始化画布
 canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.height=screen.availHeight;
 originX=canvas.width/2;
 originY=canvas.height/2;
 
