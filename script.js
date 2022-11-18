@@ -9,8 +9,14 @@ var originX;
 var originY;
 
 //初始化画布
-canvas.width=window.innerWidth;
-canvas.height=screen.availHeight;
+$(window).resize(resizeCanvas);  
+function resizeCanvas() {  
+    $("canvas").attr("width", $(window).get(0).innerWidth);  
+    $("canvas").attr("height", $(window).get(0).innerHeight);  
+    context.fillRect(0, 0, canvas.width, canvas.height);  
+};  
+resizeCanvas();  
+
 originX=canvas.width/2;
 originY=canvas.height/2;
 
