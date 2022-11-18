@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #f1 {
+            border: 5px solid peru;
+            height: 400px;
+            width: 400px;
+            line-height: 400px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="f1">倒计时10秒</div>
+    <script type="text/javascript">
+        var second = 10;
+        var id;
+        start();
+        function start() {
+            id = setInterval(xunhuan, 1000);
+        }
+        function xunhuan() {
+            second = second - 1;
+            if (second <= 0) {
+                stop();
+            }
+            var div = document.getElementById('f1');
+            div.innerHTML = second;
+        }
+        function stop() {
+            clearInterval(id);
+        }
+    </script>
+</body>
+
+</html>

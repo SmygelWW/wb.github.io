@@ -1,0 +1,74 @@
+<!-- 新建文件也可以通过Ctrl+N，注意选择语言html和保存Ctrl+S -->
+<!-- 推荐学习网站：https://www.w3school.com.cn/  https://www.runoob.com/ https://www.csdn.net/ -->
+<!-- 快捷键：注释：Ctrl+/ 复制粘贴：Alt+Shift+上下键 格式排版：Alt+Shift+F 多光标：Alt+Ctrl+上下或按住Alt+左键  -->
+<!-- 浏览器F12或右键检查（edge是这样的，其他的浏览器我不确定）检查元素可以查看网页代码 -->
+<!-- 直接输入!，然后Enter键就可以获得网页基本框架，注意不要用中文标点 -->
+<!-- html基本结构：html head body -->
+<!-- 这次培训主要介绍了几个常见元素 -->
+<!DOCTYPE html><!-- 这里是声明html5文档，培训只讲html5，其他可以自行了解 -->
+<html lang="cn">
+<!-- 这里是浏览器识别语言为en：英文 cn：中文 -->
+
+<head>
+    <meta charset="UTF-8"><!-- 中文编码方式，了解进行 -->
+    <!-- <meta http-equiv="refresh" content="10;url=http://www.baidu.com"> -->
+    <!-- 这个是网页刷新并跳转，查看效果可以取消注释 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 这个不用管，也可以自行了解 -->
+    <title>前端</title><!-- 这个是浏览器标签栏的显示，下次培训介绍浏览器标签栏的图标怎么换-->
+</head>
+
+<body>
+    <!-- html元素的结构：<标签 属性="">内容</标签> -->
+    不使用html元素的结构也能在页面上显示，但不能应用样式
+    <p>123456</p><!-- p标签是常见的段落标签 -->
+    <p>123 45
+        6</p>
+    <!-- html中所有空格和换行都会显示为一个空格，如上 -->
+    <p>123&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;456
+        <br>789
+    </p>
+    <!-- 换行用<br>标签，空格使用&ensp; (&emsp; &nbsp;也表示空格只是间隔不同)注意不要漏分号 -->
+    <div>div是块级元素，就是用新的一行显示</div>
+    <div>div是块级元素，就是用新的一行显示</div>
+    <span>span是内联元素，不会用新的一行显示</span>
+    <span>span是内联元素，不会用新的一行显示</span>
+    <hr><!-- <hr>是水平分界线 -->
+    <p>h1-6常用作标题</p>
+    <h1>这是h1</h1>
+    <h2>这是h2</h2>
+    <h3>这是h3</h3>
+    <h4>这是h4</h4>
+    <h5>这是h5</h5>
+    <h6>这是h6</h6>
+    <a href="http://www.baidu.com">这是链接：百度。注意http://别漏，否则是相对路径</a>
+    <img src="https://www.runoob.com/wp-content/uploads/2013/06/image-icon.png">
+    <!-- 图片是没有结束标签的，注意链接和图片对应的属性href(hypertext reference)和src(source) -->
+    <a href="http://www.baidu.com"><img src="https://www.runoob.com/wp-content/uploads/2013/06/image-icon.png"></a>
+    <!-- html大部分标签都可以嵌套 -->
+    <ol>
+            <li>这是有序列表ol</li>
+            <li>这是有序列表ol</li>
+            <li>这是有序列表ol</li>
+    </ol>
+    <ul>
+        <li>这是无序列表ul</li>
+        <li>这是无序列表ul</li>
+        <li><a href="http://www.baidu.com">html很多元素都可以嵌套，如这个链接</a></li>
+    </ul>
+    <ul>
+        <li>这是列表嵌套</li>
+        <ul>
+            <li>就好比一级标题和二级标题</li>
+            <li>3</li>
+        </ul>
+    </ul>
+    <a href="http://www.baidu.com">
+        <ol>
+            <li>这个是作用整个列表的链接</li>
+            <li>单个链接见57行</li>
+            <li>自定义列表下次培训再讲</li>
+        </ol>
+    </a>
+</body>
+
+</html>

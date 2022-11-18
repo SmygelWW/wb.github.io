@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>题目1</p>
+    <form>
+        <input type="radio" name="t1" value="A">A<br>
+        <input type="radio" name="t1" value="B">B<br>
+        <input type="radio" name="t1" value="C">C<br>
+        <input type="radio" name="t1" value="D">D<br>
+    <p>题目2</p>
+        <input type="radio" name="t2" value="A">A<br>
+        <input type="radio" name="t2" value="B">B<br>
+        <input type="radio" name="t2" value="C">C<br>
+        <input type="radio" name="t2" value="D">D<br>
+    <p>题目3</p>
+        <input type="radio" name="t3" value="A">A<br>
+        <input type="radio" name="t3" value="B">B<br>
+        <input type="radio" name="t3" value="C">C<br>
+        <input type="radio" name="t3" value="D">D<br>
+    </form>
+    <button onclick="myfunction()">submit</button><br>
+    <span>your score:</span>
+    <span id="score"></span>    
+</body>
+<script>
+    function myfunction(){
+        var t1=document.getElementsByName("t1");
+        var t2=document.getElementsByName("t2");
+        var t3=document.getElementsByName("t3");
+        var t=[t1,t2,t3];
+        var score=0;
+        var value=new Array;
+        var ans=new Array("A","B","C");
+        for (var i=0;i<t.length;i++){
+            for (var j=0;j<t[i].length;j++){
+                if(t[i][j].checked){
+                    value[i]=t[i][j].value;
+                    if(value[i]==ans[i]){score++}
+                }
+            }
+        }
+        if(value=="A","B","C"){score}
+        alert("答对了"+score+"题");
+    }
+</script>
+</html>

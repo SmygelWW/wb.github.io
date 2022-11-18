@@ -1,0 +1,2 @@
+xjtu logo: https://org.xjtu.edu.cn/openplatform/images/headerBg.png
+xjtu bg: https://org.xjtu.edu.cn/openplatform/images/miniBg1.png

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box box2">中<span>啊啊啊</span></div>
+    <div class="box">中</div>
+    <div class="box">中</div>
+    <div class="box">中</div>
+</body>
+<style>
+    .box {
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        transform-origin: top left;
+        position: relative;
+        left: 300px;
+        top: 300px;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        /* animation: move 1s linear; */
+        animation: rotate 1s linear infinite;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(100%);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<script>
+    console.log("hello,world");
+    alert("您是否已满18");
+    var a;
+    let b = 1;
+    a=prompt("请输入的年龄");
+
+    b = {
+        name: "WWWWW",
+        age: "18",
+        school: "xjtu",
+    };
+
+    // a=1;
+    // for(a;a<100;a++){
+    //     console.log(a)};
+    a = document.getElementsByClassName("box");
+
+</script>
+
+</html>
