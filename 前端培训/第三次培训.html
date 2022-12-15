@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="http://www.xjtu.edu.cn/images/14/12/11/9x7nn4te97/20111016.jpg" width="50%" height="50%" usemap="#map">
+    <map name="map">
+        <area shape="circle" coords="50,50,20" href="http://www.baidu.com">
+        <area shape="rect" coords="100,20,200,90" href="http://www.baidu.com">
+    </map>
+
+    <form>
+        <input type="radio" name="ans" value="A">A<br>
+        <input type="radio" name="ans" value="B">B<br>
+        <input type="radio" name="ans" value="C">C<br>
+        <input type="radio" name="ans" value="D">D<br>
+        <input type="checkbox" name="ans" value="D">D<br>
+    </form>
+    
+    <b>加粗</b><i>斜体</i><big>加大</big><sup>上角标</sup><sub>下角标</sub>
+
+    <table border="3px" width="500px" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+    </table>
+
+    <!-- <p class="p1" style="float:left"></p> -->
+    <!-- <p class="p1" style="float:right"></p> -->
+    <!-- <p class="p1" style="overflow:visible">123123123123123123123123123123123</p> -->
+
+    <p class="p1 t1">123</p>
+    <p class="p1"></p>
+    <div calss="p1" style="position:fixed;top:10px;right:10px">123</div>
+    <a href="http://www.baidu.com">百度</a> 
+
+
+</body>
+</html>
+<style>
+    .p1 {
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+        counter-reset: none;
+        counter-increment: name;    
+    }
+    p::before{
+        content:counter(name)".";
+    }
+
+    a:link{
+        color: black;
+    }
+    a:visited{
+        color: red;
+    }
+    a:hover{
+        color: green;
+        visibility: hidden;
+    }
+    a:active{
+        color: orange;
+    }
+    .p1.t1{
+        text-align: center;
+        font-size: larger;
+        opacity:0.5;
+        /* display:none; */
+    }
+    
+
+</style>

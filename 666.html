@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="father">
+        <div class="a">1</div>
+        <div class="a">2</div>
+        <div class="a">3</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+        <div class="a">4</div>
+    </div>
+    <input type="text" placeholder="aaaaaa">
+    <!-- placeholder为不输内容时显示 -->
+    <p>这只是个p标签</p>
+    <div class="bb">
+        <div class="b"></div>
+        <div class="c"></div>
+    </div>
+    <br><br><br><br>
+    <div class="clock">
+        <div class="sec"></div>
+        <div class="min"></div>
+        <div class="hour"></div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    .father {
+        height: 500px;
+        background-color: wheat;
+        display: flex;
+        /*flex清除子元素的浮动*/
+        justify-content: space-around;
+        /*子元素在x轴方向的排列方式*/
+        flex-wrap: wrap;
+        /*换行  nowrap不换行  换行的部分与下面重叠*/
+        align-items: center;
+        /*y轴排列方式*/
+    }
+
+    .a {
+        height: 100px;
+        width: 100px;
+        background-color: violet;
+    }
+
+    p {
+        height: 100px;
+        font-size: 50px;
+        background-color: tomato;
+        line-height: 100px;
+        /*字高属性值跟父元素一致*/
+    }
+
+    p:hover {
+        background-color: pink;
+    }
+
+    input:focus {
+        background-color: red;
+    }
+
+    .bb {
+        position: relative;
+        left: 30px;
+        top: 30px;
+        height: 500px;
+        width: 500px;
+        background-color: pink;
+    }
+
+    .b {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /*(a,b)a为x方向 b为y方向 左x上y*/
+        height: 200px;
+        width: 200px;
+        background-color: blueviolet;
+    }
+
+    .c {
+        position: relative;
+        left: 50px;
+        top: 50px;
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+    }
+
+    .clock {
+        height: 200px;
+        width: 200px;
+        background-color: wheat;
+        border-radius: 50%;/*圆角*/
+        position: relative;
+    }
+
+    .sec {
+        height: 0px;
+        width: 90px;
+        border-top: 1px solid black;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(0, -50%);
+        transform:scaleY(0.2)translateY(-50%)
+    }
+
+    .min {
+        height: 0px;
+        width: 80px;
+        border-top: 2px solid black;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .hour {
+        height: 0px;
+        width: 60px;
+        border-top: 3px solid black;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+</style>
+
+</html>

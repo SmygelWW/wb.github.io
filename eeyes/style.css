@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    font-weight: 100;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    color:azure
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 1.5em;
+    font-size: clamp(1em, 5vw, 4em);
+    animation: breath 1500ms ease-in-out 3 none;
+    text-align: center;
+}
+h1 > .last {
+    letter-spacing: 0;
+}
+  
+@keyframes breath {
+    0% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(240deg, 20%, 20%, 1);
+}
+
+img {
+    display: none;
+    z-index: 5;
+    width: 50%;
+    height: auto;
+    opacity: 0.8;
+    animation: showit 1500ms ease-in 1 none;
+    scale: 2;
+}
+iframe {
+    animation: showit 1000ms ease-in 1 none;
+}
+@keyframes showit {
+    0%{opacity: 0;}
+    100%{opacity: 0.8;}
+}
+
+@keyframes shine {
+    0%{opacity: 0;}
+    50%{opacity: 0.5;}
+    100%{opacity: 0;}
+}
+

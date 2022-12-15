@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div id="a" style="background-color: green;"></div>
+</body>
+</html>
+<style>
+    div {
+        /* transform: rotate(30deg); */
+        /* transform: scale(3,2); */
+        /* transform: skew(30deg,30deg); */
+        /* transform: translate(200px,100px); */
+        /* transform: matrix(); */
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: width 2s,background-color 2s;
+    }
+    div:hover {
+        width: 400px;
+        background-color: yellow;
+    }
+    @keyframes a{
+        0%{height:200px;}
+        25%{height: 300px;}
+        50%{height: 400px;}
+        75%{height: 300px;}
+        100%{height: 200px;}
+    }
+    #a {
+        animation: a 3s linear 1s 5;
+    }
+
+    
+</style>

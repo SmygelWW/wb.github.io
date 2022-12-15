@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>居中</h1>
+    <h1>flex</h1>
+    <h1>float</h1>
+    <!-- <div class="fl">i am float</div> -->
+    <div class="aa">box</div>
+    <div class="clock">
+        <div class="sec"></div>
+    </div>
+</body>
+<style>
+    .fl {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+
+    .aa {
+        background-color: blue;
+    }
+
+    .clock {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: green;
+        position: relative;
+
+    }
+
+    .sec {
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        background-color: pink;
+        transform: translate(0,-50%);
+    }
+
+    @keyframes clockrotate {
+        0%{
+            transform: rotate();
+        }
+    }
+</style>
+
+</html>
