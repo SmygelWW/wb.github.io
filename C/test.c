@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< HEAD
 #define CSIZE 4
 
 struct student{
@@ -51,4 +52,9 @@ void show_class(struct student ar[],  int lim){
         printf("%f\n", ar[i].average);
         printf("\n");
     }
+=======
+int main(){
+    printf("hello world\n");
+    return 0;
+>>>>>>> b2be38db77ca7eef34ac64d08a4797637eca9def
 }
