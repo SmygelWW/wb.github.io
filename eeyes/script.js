@@ -193,7 +193,17 @@ originY=canvas.height/2;
           h1.style.letterSpacing="1em"
           h1.innerHTML="TAP TO<br>CONTINU<span class=\"last\">E</span>"
           var clicked=false;
-          window.addEventListener("click",function(){
+          canvas.addEventListener("click",function(){
+            if(clicked){}
+            else{clicked=true
+              index()}
+          })
+          img.addEventListener("click",function(){
+            if(clicked){}
+            else{clicked=true
+              index()}
+          })
+          h1.addEventListener("click",function(){
             if(clicked){}
             else{clicked=true
               index()}
@@ -210,6 +220,25 @@ originY=canvas.height/2;
       iframe.style.display="block"
       iframe.src="page\\index\\index.html"
     }
+
+    var number=false;
+    var music=document.getElementById("music");
+    var tb=document.getElementById("tb");
+  tb.onclick=function(){
+		if(number===false){
+			 number=true;
+			document.getElementById("tb1").style.display="block";
+			document.getElementById("tb2").style.display="none";
+		
+			music.play();
+			 
+		}else{
+			document.getElementById("tb1").style.display="none";
+			document.getElementById("tb2").style.display="block";
+			number=false;
+			music.pause();
+		}
+	};
 
     // document.onclick=index()
   })();//背景

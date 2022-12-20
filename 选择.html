@@ -25,14 +25,14 @@
         <input type="radio" name="t3" value="D">D<br>
     </form>
     <button onclick="myfunction()">submit</button><br>
-    <span>your score:</span>
-    <span id="score"></span>    
+    <span id="scores">your score:</span>
 </body>
 <script>
     function myfunction(){
         var t1=document.getElementsByName("t1");
         var t2=document.getElementsByName("t2");
         var t3=document.getElementsByName("t3");
+        var scores=document.getElementById("scores");
         var t=[t1,t2,t3];
         var score=0;
         var value=new Array;
@@ -46,7 +46,7 @@
             }
         }
         if(value=="A","B","C"){score}
-        alert("答对了"+score+"题");
+        scores.innerHTML="your score: "+score;
     }
 </script>
 </html>
