@@ -224,7 +224,7 @@ originY=canvas.height/2;
       h1.parentNode.removeChild(h1)
       var iframe=document.getElementById("index")
       iframe.style.display="block"
-      iframe.src="page\\index\\index.html"
+      iframe.src="page/index/index.html"
     }
 
     var number=false;
