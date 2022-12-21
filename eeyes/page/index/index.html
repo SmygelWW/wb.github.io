@@ -1,36 +1,116 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>index</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">  
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
 
+    <style>
+        body {
+	        background: rgba(0,0,0,0);
+	        min-height: 100vh;
+	        padding: 0;
+	        margin: 0;
+        }
+        #certify {
+	        position: relative;
+	        width: 100%;
+            height: 100vh;
+	        margin: 0 auto;
+            overflow: hidden;
+        }
+ 
+        #certify .swiper-container {
+            position: absolute;
+	        width: 14rem;
+	        height: 18rem;
+	        top: 40%;
+	        left: 50%;
+	        transform: translate(-50%, -50%);
+        }
+ 
+        #certify  .swiper-slide {
+	        padding: 0;
+	        margin: 0;
+	        width: 14rem;
+	        height: 18rem;
+	        text-align: center;
+	        line-height: 18rem;
+	        font-size: 2rem;
+	        font-family: sans-serif;
+	        background-image: radial-gradient(circle farthest-side at 50% 50%,rgb(17,57,95),rgb(17,45,74));
+	        border-radius: 0.8rem;
+        }
+        a {
+            color: azure;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+ 
+    </style>
+    <title>Document</title>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="gallery">
-	<ul class="cards">
-		<a href="../jiaohu/jiaohu.html"><li>交互部</li></a>
-		<a href="../jishu/jishu.html"><li>技术部</li></a>
-		<a href="../yingshi/yingshi.html"><li>影视部</li></a>
-		<a href="../jiaohu/jiaohu.html"><li>交互部</li></a>
-		<a href="../jishu/jishu.html"><li>技术部</li></a>
-		<a href="../yingshi/yingshi.html"><li>影视部</li></a>
-		<a href="../jiaohu/jiaohu.html"><li>交互部</li></a>
-		<a href="../jishu/jishu.html"><li>技术部</li></a>
-		<a href="../yingshi/yingshi.html"><li>影视部</li></a>
-		<a href="../jiaohu/jiaohu.html"><li>交互部</li></a>
-		<a href="../jishu/jishu.html"><li>技术部</li></a>
-		<a href="../yingshi/yingshi.html"><li>影视部</li></a>
-	</ul>
-	<div class="actions">
-		<button class="prev">Prev</button>
-		<button class="next">Next</button>
-	</div>
+<div id="certify">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="../jiaohu/jiaohu.html">交互部</a></div>
+          <div class="swiper-slide"><a href="../jishu/jishu.html">技术部</a></div>
+          <div class="swiper-slide"><a href="../yingshi/yingshi.html">影视部</a></div>
+        </div>
+    </div>   
 </div>
-<!-- partial -->
-  <script src='gsap.min.js'></script>
-<script src='ScrollTrigger.min.js'></script><script  src="script.js"></script>
+<script>
+    var certifySwiper = new Swiper('#certify .swiper-container', {
+        watchSlidesProgress: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        loop: true, 
+        loopedSlides: 5,
+        autoplay: false,
+        spaceBetween: -100,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            //clickable :true,
+        },
+        on: {
+            progress: function (progress) {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    var slideProgress = this.slides[i].progress;
+                    modify = 1;
+                    if (Math.abs(slideProgress) > 1) {
+                        modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+                    }
+                    translate = slideProgress * modify * 260 + 'px';
+                    scale = 1 - Math.abs(slideProgress) / 5;
+                    zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+                    slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+                    slide.css('zIndex', zIndex);
+                    slide.css('opacity', 1);
+                    if (Math.abs(slideProgress) > 3) {
+                        slide.css('opacity', 0);
+                    }
+                }
+            },
+            setTransition: function (transition) {
+                for (var i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i)
+                    slide.transition(transition);
+                }
 
+            }
+        }
+
+    })
+</script>
 </body>
 </html>
