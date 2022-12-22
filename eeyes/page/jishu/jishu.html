@@ -16,8 +16,8 @@
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <style>
-	div:not(#loading,.ld-content){
-		visibility: hidden;
+	.bg-container .snowy{
+		display: none;
 	} 
 </style>
 <!-- SITE TITLE -->
@@ -163,7 +163,7 @@
 <script>
 	document.onreadystatechange = function () {
 		if(document.readyState === "complete"){
-			$("div:not(#loading)").css("visibility","visible");
+			$(".bg-container .snowy").css("display","block");
 			$("#loading").css("display","none");
 		}
 	}
