@@ -54,9 +54,19 @@
         }
  
     </style>
+    <style>
+        div:not(#loading,.ld-content){
+            visibility: hidden;
+        } 
+    </style>
     <title>Document</title>
 </head>
 <body>
+    <div id="loading" style="width:100%;height:100%;position:fixed;background:rgba(0,0,0,0);z-index:9990;top:0px;left:0px;transition: all 1s linear;opacity: 1;">
+		<div class="ld-content" style="position: absolute;top:50%;left: 50%;margin-left: -240px;margin-top: -120px;">
+			<img src="../../image/loading.gif" alt="" height="240px" width="480px">
+		</div>
+	</div>
 <div id="certify">
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -66,6 +76,14 @@
         </div>
     </div>   
 </div>
+<script>
+    document.onreadystatechange = function () {
+        if(document.readyState === "complete"){
+            $("div:not(#loading)").css("visibility","visible");
+            $("#loading").css("display","none");
+        }
+    }
+    </script>
 <script>
     var certifySwiper = new Swiper('#certify .swiper-container', {
         watchSlidesProgress: true,
